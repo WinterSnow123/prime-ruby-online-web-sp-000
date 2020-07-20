@@ -1,8 +1,10 @@
 #require 'benchmark'
 
 def prime?(num)
+  return false if num.even? && num != 2
+  return false if num <= 1
   return true if num == 2
-  return false if num <= 1 || (num > 2 && num.even?) || (2..num-1).none? {|denom| num % denom == 0}
+  (2..num-1).none? {|denom| num % denom == 0}
   true
 end
 
