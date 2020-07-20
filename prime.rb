@@ -18,13 +18,13 @@ end
 Benchmark.bm do |bm|
   bm.report do
     100_000.times do
-      prime?(17)
+      prime?(4)
     end
   end
 
   bm.report do
     100_000.times do
-      is_prime?(17)
+      is_prime?(4)
     end
   end
 end
