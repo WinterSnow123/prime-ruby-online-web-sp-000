@@ -1,15 +1,12 @@
 require 'benchmark'
 
 def prime?(num)
-  if num == 2
-    true
-  elsif num > 2 && num.odd?
-    (2..num - 1).to_a.none? do |denom|
+  return false if num <= 1
+  return false if num > 2 && num.even?
+    (2..num**2).none? do |denom|
       num % denom == 0
+      true
     end
-  else
-    false
-  end
 end
 
 def is_prime?(num)
