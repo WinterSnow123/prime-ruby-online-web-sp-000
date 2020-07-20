@@ -3,10 +3,8 @@
 def prime?(num)
   return false if num <= 1
   return false if num > 2 && num.even?
-    (2..num**2).none? do |denom|
-      num % denom == 0
-      true
-    end
+  (2..num**2).none? {|denom|return false if num % denom == 0}
+  true
 end
 
 #def is_prime?(num)
